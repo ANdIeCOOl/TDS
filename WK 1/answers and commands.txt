@@ -1,0 +1,41 @@
+q15
+find . -type f -size +1452c -newermt "2016-03-02 23:54:00" -exec du -cb {} + | grep total$
+
+
+q14
+#!/bin/bash
+
+# Usage: ./replace_word.sh <word_to_replace> <replacement_word>
+# Example: ./replace_word.sh apple orange
+
+# Check if both arguments are provided
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <word_to_replace> <replacement_word>"
+    exit 1
+fi
+
+word_to_replace=$1
+replacement_word=$2
+
+# Loop through all files in the current directory
+for file in *; do
+    # Check if it's a regular file
+    if [[ -f "$file" ]]; then
+        echo "Processing file: $file"
+        # Use sed to perform a case-insensitive search and replace (in-place editing)
+        sed -i "s/${word_to_replace}/${replacement_word}/Ig" "$file"
+    fi
+done
+
+echo "Replacement complete!"
+
+
+q16
+# working dir is WK 1/q16
+mkdir answer_folder
+find . -type f -not -path "./answer_folder/*" -exec mv {} answer_folder/ \;
+for file in *; do     new_name=$(echo "$file" | sed 'y/0123456789/1234567890/');     if [[ "$file" != "$new_name" ]]; then         mv "$file" "$new_name";         echo "Renamed $file to $new_name";     fi; done
+
+
+q17
+ diff a.txt b.txt | grep ">" | wc -l
