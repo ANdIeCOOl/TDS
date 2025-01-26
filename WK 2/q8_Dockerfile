@@ -1,0 +1,8 @@
+# Use an official Python image as a base
+FROM python:3.9-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Run a simple Python script as the container's main process
+CMD ["python", "-c", "print('Hello from 23f1002382!')"]
