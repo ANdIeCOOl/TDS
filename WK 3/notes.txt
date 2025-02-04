@@ -86,7 +86,7 @@ visibility: visible - Correct, the textarea is visible.
 position: static - This is the default, which is fine.
 pointerEvents: none - This is the problem! Even though we set it to auto earlier, it's now none. This is why the mouse clicks are not working.
 zIndex: auto - This is fine.
-clipPath: none - This is fine.
+clipPath: none - This is fine
 transform: none - This is fine.
 filter: none - This is fine.
 opacity: 0 - This is also a problem! Even though we set it to 1 earlier, it's now 0. This is why the textarea is not visible.
